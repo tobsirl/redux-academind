@@ -6,7 +6,7 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
 
 class Counter extends Component {
   render() {
-    console.log(this.props.result)
+    console.log(this.props.results);
     return (
       <div>
         <CounterOutput value={this.props.ctr} />
@@ -22,8 +22,12 @@ class Counter extends Component {
         <CounterControl label="Subtract 15" clicked={this.props.onSubCounter} />
         <hr />
         <button onClick={this.props.onStoreResult}>Store Result</button>
-        <ul>
-          <li onClick={this.props.onDeleteResult}>{this.props.result}</li>
+        <ul style={{ listStyle: 'none' }}>
+          {this.props.results.map(result => (
+            <li onClick={this.props.onDeleteResult} key={result.id}>
+              {result.value}
+            </li>
+          ))}
         </ul>
       </div>
     );
@@ -33,7 +37,7 @@ class Counter extends Component {
 const mapStateToProps = state => {
   return {
     ctr: state.counter,
-    result: state.results
+    results: state.results
   };
 };
 
