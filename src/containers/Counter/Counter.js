@@ -8,14 +8,13 @@ import {
   sub,
   storeResult,
   deleteResult
-} from '../../components/store/actions/actions';
+} from '../../components/store/actions/types';
 
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 
 class Counter extends Component {
   render() {
-    console.log(this.props.results);
     return (
       <div>
         <CounterOutput value={this.props.ctr} />

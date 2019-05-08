@@ -1,4 +1,4 @@
-import { STORE_RESULT, DELETE_RESULT } from '../actions/actions';
+import { STORE_RESULT, DELETE_RESULT } from '../actions/types';
 
 const initialState = {
   results: []
